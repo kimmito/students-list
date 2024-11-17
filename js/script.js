@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
     errorMessageContainer.style.color = 'red';
     form.insertBefore(errorMessageContainer, form.firstChild);
     let nameSortFlag, facultySortFlag, burthSortFlag, studySortFlag = false;
-    let filterButton = document.querySelector('.filter-button');
     let updateFilterButton = document.querySelector('.update-filter-button');
     let nameFilterInput = document.querySelector('#nameFilter');
     let facultyFilterInput = document.querySelector('#facultyFilter');
@@ -59,16 +58,20 @@ document.addEventListener('DOMContentLoaded', function() {
         headerId.textContent = '#';
         let headerFullName = document.createElement('th');
         headerFullName.classList.add('name-sort-button');
+        headerFullName.style.cursor = 'pointer';
         headerFullName.textContent = 'ФИО';
         let headerDate = document.createElement('th');
         headerDate.textContent = 'Дата рождения';
         headerDate.classList.add('age-sort-button');
+        headerDate.style.cursor = 'pointer';
         let headerStudyStart = document.createElement('th');
         headerStudyStart.textContent = 'Годы обучения';
         headerStudyStart.classList.add('studyStart-sort-button');
+        headerStudyStart.style.cursor = 'pointer';
         let headerFaculty = document.createElement('th');
         headerFaculty.classList.add('faculty-sort-button');
         headerFaculty.textContent = 'Факультет';
+        headerFaculty.style.cursor = 'pointer';
         let headerDelete = document.createElement('th');
         headerDelete.setAttribute('scope', 'col');        
         headerId.setAttribute('scope', 'col');
@@ -398,7 +401,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const studyStartSortButton = document.querySelector('.studyStart-sort-button');
     studyStartSortButton.addEventListener('click', studyStartSort);
     updateFilterButton.addEventListener('click', cleanFilter);
-    // filterButton.addEventListener('click', filter);
     nameFilterInput.addEventListener('input', filter);
     facultyFilterInput.addEventListener('input', filter);
     studyStartInputFilter.addEventListener('input', filter);
